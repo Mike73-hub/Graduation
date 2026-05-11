@@ -35,26 +35,5 @@
   <h1>Countdown to September 18, 2027</h1>
   <div id="countdown">Calculating…</div>
 
-  <script>
-    const targetDate = new Date(2027, 9, 27, 0, 0, 0); // September 18, 2027
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) {
-        document.getElementById('countdown').textContent = 'The date has arrived!';
-        clearInterval(timer);
-        return;
-      }
-      const seconds = Math.floor(diff / 1000);
-      const days = Math.floor(seconds / (60 * 60 * 24));
-      const hours = Math.floor((seconds % (60 * 60 * 24)) / (60 * 60));
-      const minutes = Math.floor((seconds % (60 * 60)) / 60);
-      const secs = seconds % 60;
-      document.getElementById('countdown').textContent =
-        `${days}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${secs.toString().padStart(2, '0')}s`;
-    }
-    const timer = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
 </body>
 </html>
